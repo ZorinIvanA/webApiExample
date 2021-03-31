@@ -25,8 +25,15 @@ namespace FitnessRecords.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok((await _exerciseService.GetExercises())
-                .Select(exercise => new ExerciseModel(exercise)));
+            try
+            {
+                return Ok((await _exerciseService.GetExercises())
+                    .Select(exercise => new ExerciseModel(exercise)));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpPut]
