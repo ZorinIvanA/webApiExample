@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using FitnessRecords.Domain.Entities;
 using FitnessRecords.Domain.Interfaces;
@@ -27,6 +29,7 @@ namespace FitnessRecords.Infrastructure.Repositories
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString(CONNECTION_STRING_NAME)))
             {
+                Console.WriteLine(connection.ConnectionString);
                 await connection.OpenAsync();
                 using (var cmd = new SqlCommand("SELECT * FROM dbo.Exercises", connection))
                 {
@@ -49,12 +52,32 @@ namespace FitnessRecords.Infrastructure.Repositories
         public async Task AddExercise(Exercise exercise)
         {
             if (exercise == null)
+            {
+                Console.WriteLine("adding excercise via repo");
                 throw new ArgumentNullException(nameof(exercise));
+            }
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString(CONNECTION_STRING_NAME)))
             {
+                Console.WriteLine($"open con {connection.ConnectionString}");
                 await connection.OpenAsync();
+                Console.WriteLine("con opened");
                 using (var cmd = new SqlCommand($"INSERT INTO dbo.Exercises (name, description) VALUES ('{exercise.Name}','{exercise.Description}')", connection))
+                {
+                    Console.WriteLine("exec command");
+                    await cmd.ExecuteNonQueryAsync();
+                    Console.WriteLine("exec command finished");
+                }
+            }
+        }
+
+        public async Task AddFile(string description, byte[] file)
+        {
+            using (var connection = new SqlConnection(_configuration.GetConnectionString(CONNECTION_STRING_NAME)))
+            {
+                await connection.OpenAsync();
+                var b = Convert.ToBase64String(file);
+                using (var cmd = new SqlCommand($"INSERT INTO dbo.Exercises (name, description, picture) VALUES ('{description}','{description}, {b}')", connection))
                 {
                     await cmd.ExecuteNonQueryAsync();
                 }

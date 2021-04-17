@@ -5,10 +5,9 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessRecords", "FitnessRecords\FitnessRecords.csproj", "{3FC3CEEC-3736-4E26-80A5-8EE3CBD33AE6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{3ABE04E8-423C-42EA-B498-1EB8321EEFC0}"
-	ProjectSection(SolutionItems) = preProject
-		Dockerfile = Dockerfile
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercisesCompletion", "ExcercisesCompletion\ExcercisesCompletion.csproj", "{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +19,14 @@ Global
 		{3FC3CEEC-3736-4E26-80A5-8EE3CBD33AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC3CEEC-3736-4E26-80A5-8EE3CBD33AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC3CEEC-3736-4E26-80A5-8EE3CBD33AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

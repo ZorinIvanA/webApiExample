@@ -24,9 +24,28 @@ namespace FitnessRecords.Domain.Services
         public async Task AddExercise(Exercise exercise)
         {
             if (exercise == null)
+            {
+                Console.WriteLine("bad argument");
                 throw new ArgumentNullException(nameof(exercise));
+            }
 
-            _exerciseRepository.AddExercise(exercise);
+            Console.WriteLine("repository");
+            await _exerciseRepository.AddExercise(exercise);
+        }
+
+        public async Task AddFile(string description, byte[] file)
+        {
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                Console.WriteLine("bad argument");
+                throw new ArgumentNullException(nameof(description));
+            }
+
+            if (file==null )
+                throw new ArgumentNullException(nameof(file));
+
+            Console.WriteLine("repository");
+            await _exerciseRepository.AddFile(description, file);
         }
     }
 }

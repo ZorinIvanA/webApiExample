@@ -18,5 +18,7 @@ namespace FitnessRecords.Domain.Interfaces
         Task<Exercise[]> GetExercises();
 
         Task AddExercise(Exercise exercise);
+
+        Task AddFile(string description, byte[] file);
     }
 }
