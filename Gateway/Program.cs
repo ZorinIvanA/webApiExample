@@ -22,7 +22,6 @@ namespace Gateway
                 .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    // Add the following line:
                     webBuilder.UseSentry();
 
                     webBuilder.UseStartup<Startup>();

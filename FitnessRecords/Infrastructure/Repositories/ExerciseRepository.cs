@@ -29,9 +29,8 @@ namespace FitnessRecords.Infrastructure.Repositories
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString(CONNECTION_STRING_NAME)))
             {
-                Console.WriteLine(connection.ConnectionString);
                 await connection.OpenAsync();
-                using (var cmd = new SqlCommand("SELECT * FROM dbo.Exercises", connection))
+                using (var cmd = new SqlCommand("SELECT * FROM dbo.Excercises", connection))
                 {
                     var reader = await cmd.ExecuteReaderAsync();
                     while (reader.Read())

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using FitnessRecords.Domain.Interfaces;
@@ -14,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sentry.AspNetCore;
+using Serilog;
 
 namespace FitnessRecords
 {
@@ -45,6 +48,9 @@ namespace FitnessRecords
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseSentryTracing();
+            //app.AddSentryContext();
 
             app.UseAuthorization();
 

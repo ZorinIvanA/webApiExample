@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sentry.AspNetCore;
 using Serilog;
 
 namespace Gateway
@@ -41,8 +42,8 @@ namespace Gateway
 
             app.UseRouting();
 
-            app.AddSentryContext();
-
+            //app.AddSentryContext();
+            app.UseSentryTracing();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
