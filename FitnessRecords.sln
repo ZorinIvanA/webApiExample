@@ -5,7 +5,10 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessRecords", "FitnessRecords\FitnessRecords.csproj", "{3FC3CEEC-3736-4E26-80A5-8EE3CBD33AE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{36D6BBB0-6B99-445B-A88A-A28F6D6E211B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{DA263B57-D3C4-41B9-A4C9-502452CE192B}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercisesCompletion", "ExcercisesCompletion\ExcercisesCompletion.csproj", "{C168AFEB-BFE0-4771-A8A8-771FDDEA915F}"
 EndProject
