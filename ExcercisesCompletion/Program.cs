@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Serilog;
 
-namespace FitnessRecords
+namespace ExcercisesCompletion
 {
     public class Program
     {
@@ -21,8 +20,6 @@ namespace FitnessRecords
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseSentry();
-                    webBuilder.UseSerilog();
                     webBuilder.UseStartup<Startup>();
                 });
     }
