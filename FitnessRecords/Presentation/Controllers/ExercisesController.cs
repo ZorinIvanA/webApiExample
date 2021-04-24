@@ -30,22 +30,16 @@ namespace FitnessRecords.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var logger = new LoggerConfiguration()
-                .WriteTo.Sentry("https://074d9f90cfc44b52a2d3c1d1d604842b@o572490.ingest.sentry.io/5721941")
-                .WriteTo.Console()
-                .Enrich.FromLogContext()
-                .CreateLogger();
             try
             {
-                logger.Information("Запрос на получение упражнений");
+                _logger.LogInformation("Запрос на получение упражнений");
 
-                throw new Exception("Страшная ошибка");
-                //return Ok((await _exerciseService.GetExercises())
-                //    .Select(exercise => new ExerciseModel(exercise)));
+                return Ok((await _exerciseService.GetExercises())
+                    .Select(exercise => new ExerciseModel(exercise)));
             }
             catch (Exception e)
             {
-                logger.Error(e, "Произошла ошибка");
+                _logger.LogError(e, "Произошла ошибка");
                 return StatusCode(StatusCodes.Status500InternalServerError, "Произошла ошибка, обратитесь в службу поддержки!");
             }
         }

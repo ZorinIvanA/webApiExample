@@ -50,7 +50,6 @@ namespace FitnessRecords
             app.UseRouting();
 
             app.UseSentryTracing();
-            //app.AddSentryContext();
 
             app.UseAuthorization();
 
