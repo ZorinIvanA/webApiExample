@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FitnessRecords.Domain.Interfaces;
 using FitnessRecords.Domain.Services;
 using FitnessRecords.Infrastructure.Repositories;
+using FitnessRecords.Presentation.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,6 +53,8 @@ namespace FitnessRecords
             app.UseSentryTracing();
 
             app.UseAuthorization();
+
+            app.UseLoggerMiddleware();
 
             app.UseEndpoints(endpoints =>
             {

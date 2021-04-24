@@ -32,8 +32,6 @@ namespace FitnessRecords.Presentation.Controllers
         {
             try
             {
-                _logger.LogInformation("Запрос на получение упражнений");
-
                 return Ok((await _exerciseService.GetExercises())
                     .Select(exercise => new ExerciseModel(exercise)));
             }
