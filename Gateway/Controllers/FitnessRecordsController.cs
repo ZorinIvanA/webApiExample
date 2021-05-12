@@ -38,6 +38,7 @@ namespace Gateway.Controllers
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Add("sentry-header", "123");
+                    //Реализация обращения к сервису
                     var url = _configuration.GetSection("FitnessRecordsUri").Value;
                     var resultMessage = await client.GetAsync($"{url}exercises");
                     resultMessage.EnsureSuccessStatusCode();

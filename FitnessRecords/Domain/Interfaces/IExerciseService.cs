@@ -7,7 +7,7 @@ using FitnessRecords.Domain.Entities;
 namespace FitnessRecords.Domain.Interfaces
 {
     /// <summary>
-    /// Служба для работы с интерфейсами
+    /// Служба для работы с интерфейсами - интерфейс нужен для dependency injection
     /// </summary>
     public interface IExerciseService
     {

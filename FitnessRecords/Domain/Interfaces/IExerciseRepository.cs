@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
 namespace FitnessRecords.Domain.Interfaces
 {
+    /// <summary>
+    /// Этот интерфейс нужен для абстрагирования бизнес-логики от инфраструктуры
+    /// </summary>
     public interface IExerciseRepository
     {
         Task<Exercise[]> GetExercises();

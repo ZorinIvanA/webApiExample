@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FitnessRecords.Domain.Interfaces;
 using FitnessRecords.Domain.Services;
+using FitnessRecords.Infrastructure.Providers;
 using FitnessRecords.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace FitnessRecords
             services.AddControllers();
             services.AddTransient<IExerciseService, ExercisesService>();
             services.AddTransient<IExerciseRepository, ExerciseRepository>();
+            services.AddTransient<IWeatherProvider, WeatherProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

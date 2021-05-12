@@ -39,9 +39,10 @@ namespace FitnessRecords.Presentation.Controllers
             {
                 logger.Information("Запрос на получение упражнений");
 
-                throw new Exception("Страшная ошибка");
-                //return Ok((await _exerciseService.GetExercises())
-                //    .Select(exercise => new ExerciseModel(exercise)));
+                //throw new Exception("Страшная ошибка");
+                //Используем сервис как интерфейс, но вместо него в Startup.cs подставлена реализация
+                return Ok((await _exerciseService.GetExercises())
+                    .Select(exercise => new ExerciseModel(exercise)));
             }
             catch (Exception e)
             {

@@ -45,7 +45,7 @@ namespace FitnessRecords.Infrastructure.Repositories
                 }
             }
 
-            return exercises.Select(e => e.ToModel()).ToArray();
+            return exercises.Select(e => e.ToEntity()).ToArray();
         }
 
         public async Task AddExercise(Exercise exercise)

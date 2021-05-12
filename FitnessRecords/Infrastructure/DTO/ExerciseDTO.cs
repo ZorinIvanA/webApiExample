@@ -12,7 +12,7 @@ namespace FitnessRecords.Infrastructure.DTO
         public string name { get; set; }
         public string description { get; set; }
 
-        public Exercise ToModel()
+        public Exercise ToEntity()
         {
             return new Exercise()
             {
